@@ -1,6 +1,6 @@
 package com.taller.patrones.application;
 
-import com.taller.patrones.domain.Attack;
+import com.taller.patrones.domain.AttackCommand;
 import com.taller.patrones.domain.Battle;
 import com.taller.patrones.domain.Character;
 import com.taller.patrones.infrastructure.combat.CombatEngine;
@@ -49,7 +49,7 @@ public class BattleService {
         Battle battle = battleRepository.findById(battleId);
         if (battle == null || battle.isFinished() || !battle.isPlayerTurn()) return;
 
-        Attack attack = combatEngine.createAttack(attackName);
+        AttackCommand attack = combatEngine.createAttack(attackName);
         int damage = combatEngine.calculateDamage(battle.getPlayer(), battle.getEnemy(), attack);
         applyDamage(battle, battle.getPlayer(), battle.getEnemy(), damage, attack);
     }
@@ -58,12 +58,12 @@ public class BattleService {
         Battle battle = battleRepository.findById(battleId);
         if (battle == null || battle.isFinished() || battle.isPlayerTurn()) return;
 
-        Attack attack = combatEngine.createAttack(attackName != null ? attackName : "TACKLE");
+        AttackCommand attack = combatEngine.createAttack(attackName != null ? attackName : "TACKLE");
         int damage = combatEngine.calculateDamage(battle.getEnemy(), battle.getPlayer(), attack);
         applyDamage(battle, battle.getEnemy(), battle.getPlayer(), damage, attack);
     }
 
-    private void applyDamage(Battle battle, Character attacker, Character defender, int damage, Attack attack) {
+    private void applyDamage(Battle battle, Character attacker, Character defender, int damage, AttackCommand attack) {
         defender.takeDamage(damage);
         String target = defender == battle.getPlayer() ? "player" : "enemy";
         battle.setLastDamage(damage, target);
