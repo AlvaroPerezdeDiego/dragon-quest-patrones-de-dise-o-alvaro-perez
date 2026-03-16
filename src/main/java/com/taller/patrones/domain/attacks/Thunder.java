@@ -1,16 +1,15 @@
 package com.taller.patrones.domain.attacks;
 
 import com.taller.patrones.domain.Attack;
-import com.taller.patrones.domain.AttackCommand;
 import com.taller.patrones.domain.Character;
 import com.taller.patrones.domain.MyRandom;
 import com.taller.patrones.domain.attackTypes.CriticSpecialAttackType;
 import com.taller.patrones.domain.attackTypes.SpecialAttackType;
 
-public class Thunder extends Attack implements AttackCommand {
+public class Thunder extends Attack {
 
     public Thunder() {
-        super("Thunder", 90, AttackType.SPECIAL);
+        super("Thunder", 90);
     }
 
     @Override

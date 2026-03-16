@@ -1,17 +1,15 @@
 package com.taller.patrones.domain.attacks;
 
 import com.taller.patrones.domain.Attack;
-import com.taller.patrones.domain.AttackCommand;
 import com.taller.patrones.domain.Character;
 import com.taller.patrones.domain.MyRandom;
 import com.taller.patrones.domain.attackTypes.CriticNormalAttackType;
 import com.taller.patrones.domain.attackTypes.NormalAttackType;
-import com.taller.patrones.domain.attackTypes.SpecialAttackType;
 
-public class Tackle extends Attack implements AttackCommand {
+public class Tackle extends Attack {
 
     public Tackle () {
-        super("Tackle", 40, AttackType.NORMAL);
+        super("Tackle", 40);
     }
 
     @Override
@@ -19,7 +17,7 @@ public class Tackle extends Attack implements AttackCommand {
         if (MyRandom.getInstance().nextDouble() < 0.2) {
             setStrategy(new CriticNormalAttackType());
         } else {
-            setStrategy(new SpecialAttackType());
+            setStrategy(new NormalAttackType());
         }
         return getStrategy().calculateDamage(attacker, defender, this);
     }

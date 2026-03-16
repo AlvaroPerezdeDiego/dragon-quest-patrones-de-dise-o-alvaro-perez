@@ -1,8 +1,32 @@
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/interfaces/rest/BattleController.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/domain/Battle.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/infrastructure/persistence/BattleRepository.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/application/BattleService.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/domain/Character.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/infrastructure/combat/CombatEngine.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/CombatSimulatorApplication.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/domain/Attack.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\Golpe.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\AttackTypeStrategy.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\MyRandom.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attackTypes\CriticNormalAttackType.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\CombatSimulatorApplication.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\FireballCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\Character.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\SlashCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\Tackle.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\TackleCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\IceBeamCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attackTypes\NormalAttackType.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\application\BattleService.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\PoisonStingCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\MeteoroCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attackTypes\CriticSpecialAttackType.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\Slash.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\Attack.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\Fireball.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\infrastructure\combat\CombatEngine.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\Thunder.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\IceBeam.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\AttackFactory.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\Meteoro.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\Battle.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\GolpeCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\interfaces\rest\BattleController.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attackTypes\StatusAttackType.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\concreteCreators\ThunderCreator.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attacks\PoisonSting.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\domain\attackTypes\SpecialAttackType.java
+C:\Users\alvaro\Desktop\Universidad\NextDigital\dragon-quest-patrones-de-dise-o-alvaro-perez\src\main\java\com\taller\patrones\infrastructure\persistence\BattleRepository.java
