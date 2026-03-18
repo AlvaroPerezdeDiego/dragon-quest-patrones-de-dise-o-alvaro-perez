@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class MyRandom {
 
-    private static final MyRandom instance = new MyRandom();
+    private static MyRandom instance;
     private Random random;
 
     private MyRandom() {
@@ -12,6 +12,9 @@ public class MyRandom {
     }
 
     public static MyRandom getInstance() {
+        if (instance == null) {
+            instance = new MyRandom();
+        }
         return instance;
     }
 
