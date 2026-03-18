@@ -1,11 +1,9 @@
 package com.taller.patrones.domain;
 
-import lombok.Getter;
 
 /**
  * Representa un ataque que puede ejecutar un personaje.
  */
-@Getter
 public abstract class Attack {
 
     private final String name;
@@ -16,6 +14,10 @@ public abstract class Attack {
         this.name = name;
         this.basePower = basePower;
     }
+
+    public String getName() {return name;}
+    public int getBasePower() {return basePower;}
+    public AttackTypeStrategy getStrategy() {return strategy;}
 
     public void setStrategy(AttackTypeStrategy  strategy) { this.strategy = strategy;}
 

@@ -1,6 +1,5 @@
 package com.taller.patrones.domain;
 
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +7,6 @@ import java.util.List;
 /**
  * Representa una batalla entre dos personajes.
  */
-@Getter
 public class Battle {
 
     private final Character player;
@@ -26,6 +24,19 @@ public class Battle {
         this.finished = false;
         this.currentTurn = player.getSpeed() >= enemy.getSpeed() ? "player" : "enemy";
         log("¡Comienza la batalla! " + player.getName() + " vs " + enemy.getName());
+    }
+
+    public Character getPlayer() {return player;}
+    public Character getEnemy() {return enemy;}
+    public String getCurrentTurn() {return currentTurn;}
+    public List<String> getBattleLog() {return battleLog;}
+    public void setCurrentTurn(String currentTurn) {this.currentTurn = currentTurn;}
+    public int getLastDamage() {return lastDamage;}
+    public boolean isFinished() {
+        return finished;
+    }
+    public String getLastDamageTarget() {
+        return lastDamageTarget;
     }
 
     public void log(String message) { battleLog.add(message); }

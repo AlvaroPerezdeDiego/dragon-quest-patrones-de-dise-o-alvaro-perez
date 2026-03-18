@@ -1,11 +1,9 @@
 package com.taller.patrones.domain;
 
-import lombok.Getter;
 
 /**
  * Representa un personaje en combate.
  */
-@Getter
 public class Character {
 
     private final String name;
@@ -34,5 +32,29 @@ public class Character {
 
     public double getHpPercentage() {
         return maxHp > 0 ? (double) currentHp / maxHp * 100 : 0;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCurrentHp() {
+        return currentHp;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 }
