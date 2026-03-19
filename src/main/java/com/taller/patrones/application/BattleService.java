@@ -1,11 +1,16 @@
 package com.taller.patrones.application;
 
+import com.taller.patrones.application.observers.EstadisticasObserver;
+import com.taller.patrones.application.observers.LastDamageObserver;
+import com.taller.patrones.application.observers.LogObserver;
+import com.taller.patrones.application.observers.SistemaDeAnalyticsObserver;
 import com.taller.patrones.domain.Attack;
 import com.taller.patrones.domain.Battle;
 import com.taller.patrones.domain.Character;
 import com.taller.patrones.infrastructure.combat.CombatEngine;
 import com.taller.patrones.infrastructure.persistence.BattleRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,6 +24,7 @@ public class BattleService {
 
     private final CombatEngine combatEngine = new CombatEngine();
     private final BattleRepository battleRepository = BattleRepository.getInstance();
+    private List<DamageObserver> damageObservers = new ArrayList<>();
 
     public static final List<String> PLAYER_ATTACKS = List.of("TACKLE", "SLASH", "FIREBALL", "ICE_BEAM", "POISON_STING", "THUNDER", "METEOR");
     public static final List<String> ENEMY_ATTACKS = List.of("TACKLE", "SLASH", "FIREBALL");
@@ -34,6 +40,7 @@ public class BattleService {
                 120, 30, 10, 15
         );
 
+        addObserversToList();
         Battle battle = new Battle(player, enemy);
         String battleId = UUID.randomUUID().toString();
         battleRepository.save(battleId, battle);
@@ -65,9 +72,8 @@ public class BattleService {
 
     private void applyDamage(Battle battle, Character attacker, Character defender, int damage, Attack attack) {
         defender.takeDamage(damage);
-        String target = defender == battle.getPlayer() ? "player" : "enemy";
-        battle.setLastDamage(damage, target);
-        battle.log(attacker.getName() + " usa " + attack.getName() + " y hace " + damage + " de daño a " + defender.getName());
+        ParametrosAObservers parametrosAObservers = new ParametrosAObservers(damage, battle, attacker, defender, attack);
+        notifyDamageObservers(parametrosAObservers);
         battle.switchTurn();
         if (!defender.isAlive()) {
             battle.finish(attacker.getName());
@@ -79,10 +85,29 @@ public class BattleService {
         Character player = new Character(fighter1Name, fighter1Hp, fighter1Atk, 10, 10);
         Character enemy = new Character(fighter2Name, fighter2Hp, fighter2Atk, 10, 10);
         Battle battle = new Battle(player, enemy);
+        addObserversToList();
         String battleId = UUID.randomUUID().toString();
         battleRepository.save(battleId, battle);
         return new BattleStartResult(battleId, battle);
     }
 
     public record BattleStartResult(String battleId, Battle battle) {}
+
+    public void addDamageObserver(DamageObserver damageObserver) {
+        damageObservers.add(damageObserver);
+    }
+    public void removeDamageObserver(DamageObserver damageObserver) {
+        damageObservers.remove(damageObserver);
+    }
+    private void notifyDamageObservers(ParametrosAObservers params) {
+        for (DamageObserver damageObserver : damageObservers) {
+            damageObserver.update(params);
+        }
+    }
+    public void addObserversToList() {
+        addDamageObserver(new SistemaDeAnalyticsObserver());
+        addDamageObserver(new EstadisticasObserver());
+        addDamageObserver(new LogObserver());
+        addDamageObserver(new LastDamageObserver());
+    }
 }
