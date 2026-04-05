@@ -4,6 +4,9 @@ import com.taller.patrones.interfaces.rest.ExternalBattle;
 
 import java.util.Map;
 
+/**
+ * Cuidado con el spanglish
+ */
 public class FormatoDistintoAdapter implements ExternalBattle {
     Map<String, Object> oldBody;
 
