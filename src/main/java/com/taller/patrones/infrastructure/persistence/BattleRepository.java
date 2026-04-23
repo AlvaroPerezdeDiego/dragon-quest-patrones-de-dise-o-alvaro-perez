@@ -13,10 +13,13 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class BattleRepository {
 
-    private final Map<String, Battle> battles;
     private static BattleRepository instance;
+    private final Map<String, Battle> battles;
 
-    private BattleRepository() {battles = new ConcurrentHashMap<>();}
+    private BattleRepository() {
+        battles = new ConcurrentHashMap<>(); // Not bad
+    }
+
     public static BattleRepository getInstance() {
         if (instance == null) {
             instance = new BattleRepository();

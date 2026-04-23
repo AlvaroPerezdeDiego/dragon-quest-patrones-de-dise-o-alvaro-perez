@@ -4,6 +4,9 @@ import com.taller.patrones.interfaces.rest.ExternalBattle;
 
 import java.util.Map;
 
+/**
+ * Cuidado con el nombre, parece que adapta cualquier json, y no es verdad
+ */
 public class JsonAdapter implements ExternalBattle {
     Map<String, Object> oldBody;
 

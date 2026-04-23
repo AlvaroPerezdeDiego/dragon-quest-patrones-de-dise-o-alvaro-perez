@@ -7,11 +7,11 @@ package com.taller.patrones.domain;
 public class Character {
 
     private final String name;
-    private int currentHp;
     private final int maxHp;
     private final int attack;
     private final int defense;
     private final int speed;
+    private int currentHp;
 
     /*
     Aquí iría un @Builder para poder usar el patrón builder que implementa lombok.
@@ -22,6 +22,11 @@ public class Character {
 
     Por lo que he visto es un error con la version de lombok y de java, pero no he podido actualizar lombok
     me da cosilla cambiar el SDK
+
+    El Builder tenías que hacerlo a mano, era la idea para que aprendieras a hacerlos, comenté en clase que no usárais lombok.
+
+    Mira el mio:
+    https://github.com/AnaGciaSchz/dragon-quest-patrones/blob/solucion-ana/src/main/java/com/taller/patrones/domain/model/Character.java
     */
 
     public Character(String name, int maxHp, int attack, int defense, int speed) {

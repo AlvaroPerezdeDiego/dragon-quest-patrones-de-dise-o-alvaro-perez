@@ -4,7 +4,7 @@ package com.taller.patrones.domain;
 /**
  * Representa un ataque que puede ejecutar un personaje.
  */
-public abstract class Attack {
+public abstract class Attack { //Superclase, no está mal
 
     private final String name;
     private final int basePower;
@@ -15,11 +15,21 @@ public abstract class Attack {
         this.basePower = basePower;
     }
 
-    public String getName() {return name;}
-    public int getBasePower() {return basePower;}
-    public AttackTypeStrategy getStrategy() {return strategy;}
+    public String getName() {
+        return name;
+    }
 
-    public void setStrategy(AttackTypeStrategy  strategy) { this.strategy = strategy;}
+    public int getBasePower() {
+        return basePower;
+    }
+
+    public AttackTypeStrategy getStrategy() {
+        return strategy;
+    }
+
+    public void setStrategy(AttackTypeStrategy strategy) {
+        this.strategy = strategy;
+    }
 
     public abstract int execute(Character attacker, Character defender);
 }
